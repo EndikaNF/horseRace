@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>🏇 Carreras de Caballos</title>
+
+</head>
+<body>
+
+      <!-- 🎵 Elemento de audio oculto -->
+      <audio class="bgMusic" loop>
+        <source src="" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+
+
+  <div class="header">
+    <div id="title">
+      <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/title_horse.jpg
+      " style="height: 20px; width: auto; border-radius: 8px;">
+      Carreras de Caballos
+    </div>
+    <div id="saldo">💰 Saldo: €1000</div>
+    <div class="sonidoSettings" id="toggleMusic" title="Activar/Desactivar música">🔈</div>
+  </div>
+
+  <div id="pista">
+  <div class="meta"></div>
+
+  <!-- Carril 1 -->
+  <div class="imagen-hierba imagen-hierba-1"></div>
+  <div class="linea" style="top: 20%;"></div>
+
+  <!-- Carril 2 -->
+  <div class="imagen-hierba imagen-hierba-2"></div>
+  <div class="linea" style="top: 40%;"></div>
+
+  <!-- Carril 3 -->
+  <div class="imagen-hierba imagen-hierba-3"></div>
+  <div class="linea" style="top: 60%;"></div>
+
+  <!-- Carril 4 -->
+  <div class="imagen-hierba imagen-hierba-4"></div>
+  <div class="linea" style="top: 80%;"></div>
+
+  <!-- Carril 5 (si quieres una línea a 100% puedes cambiar el porcentaje) -->
+  <div class="imagen-hierba imagen-hierba-5"></div>
+  
+    <!-- 5 CABALLOS -->
+    <div id="caballo1" class="caballo-wrapper" style="top: 1%;">
+        <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-blue.png" class="caballo-img">
+        <video src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/mp4/horse-blue.mp4" class="caballo-video" muted></video>
+    </div>
+    <div id="caballo2" class="caballo-wrapper" style="top: 21%;">
+        <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-orange.png" class="caballo-img">
+        <video src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/mp4/horse-orange.mp4" class="caballo-video" muted></video>
+    </div>
+    <div id="caballo3" class="caballo-wrapper" style="top: 41%;">
+        <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-purple.png" class="caballo-img">
+        <video src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/mp4/horse-purple.mp4" class="caballo-video" muted></video>
+    </div>
+    <div id="caballo4" class="caballo-wrapper" style="top: 61%;">
+        <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-red.png" class="caballo-img">
+        <video src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/mp4/horse-red.mp4" class="caballo-video" muted></video>
+    </div>
+    <div id="caballo5" class="caballo-wrapper" style="top: 81%;">
+        <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-green.png" class="caballo-img">
+        <video src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/mp4/horse-green.mp4" class="caballo-video" muted></video>
+    </div>
+    <div id="contador">
+      <div class="numero_fondo"></div>
+      <div class="fondo"></div>
+    </div>
+  </div>
+  
+
+
+
+  <div id="resultado"></div>
+
+  <div class="apuestas">
+
+        <!-- Tabla de apuestas -->
+    <table class="tableron" style="width: 100%; margin-top: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+      <thead>
+        <tr>
+          <th>TRAP</th>
+          <th>WINS</th>
+          <th>PLACE</th>
+          <th>SHOW</th>
+          <th>TRAP</th>
+          <th>WINS</th>
+          <th>PLACE</th>
+          <th>SHOW</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr>
+          <!-- Aquí colocamos una imagen del caballo en vez de un número -->
+          <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-blue.png" alt="Caballo Azul" class="caballo-mini"></td>
+          <td><input type="number" class="apuesta" id="win1" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="place1" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="show1" min="0" value="0"></td>
+          <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-red.png" alt="Caballo Rojo" class="caballo-mini"></td>
+          <td><input type="number" class="apuesta" id="win4" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="place4" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="show4" min="0" value="0"></td>
+        </tr>
+        <tr>
+          <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-orange.png" alt="Caballo Naranja" class="caballo-mini"></td>
+          <td><input type="number" class="apuesta" id="win2" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="place2" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="show2" min="0" value="0"></td>
+          <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-green.png" alt="Caballo Verde" class="caballo-mini"></td>
+          <td><input type="number" class="apuesta" id="win5" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="place5" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="show5" min="0" value="0"></td>
+        </tr>
+        <tr>
+          <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-purple.png" alt="Caballo Morado" class="caballo-mini"></td>
+          <td><input type="number" class="apuesta" id="win3" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="place3" min="0" value="0"></td>
+          <td><input type="number" class="apuesta" id="show3" min="0" value="0"></td>
+          <td colspan="4">
+            <button onclick="mostrarContadorConDesenfoque()">Iniciar Carrera 🏁</button>
+          </td>
+        </tr>        
+      </tbody>
+    </table>    
+  </div>
+
+  <!-- Modal de resultado -->
+<div id="modalResultado" class="modal">
+  <div class="modal-content">
+    <h2 id="modalTitulo">🏁 ¡Carrera Terminada! 🏁</h2>
+    <img id="gifResultado" src="" alt="Resultado">
+    <div id="mensajeResultado" style="font-size: 18px; margin-bottom: 20px;"></div>
+    
+    <!-- Tabla de resultados -->
+    <table id="tablaResultados">
+      <thead>
+        <tr>
+          <th>Posición</th>
+          <th>Caballo</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
+
+  
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    
+</body>
+</html>
