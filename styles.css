@@ -7,8 +7,11 @@
 body {
   user-select: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #f3e4d7, #e8cfae); /* beige claro a dorado suave */
+  background-image: url("https://raw.githubusercontent.com/EndikaNF/horseRace/082ff60db2951e27e12c6da0f3b570de456995df/img/upscalemedia-transformed.jpeg");
   color: #2e1f0f; /* marrón oscuro para texto */
+  background-size: cover; /* Ajusta la imagen para cubrir toda el área del body */
+  background-position: top; /* Centra la imagen en el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .header {
