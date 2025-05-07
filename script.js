@@ -134,6 +134,17 @@ function leerApuestasDesdeTabla() {
 
 
 function mostrarContadorConDesenfoque() {
+  const apuestas = leerApuestasDesdeTabla();
+  const totalApostado = apuestas.reduce((sum, a) => sum + a.cantidad, 0);
+  
+  if (totalApostado > saldo) {
+    mostrarAlertaPersonalizada(
+      'Saldo insuficiente',
+      '¡Edita las apuestas correctamente!'
+    );
+    return;
+  }
+  
   deshabilitarControles()
   const contadorElement = document.getElementById('contador');
 
@@ -167,11 +178,6 @@ function iniciarCarrera() {
       '😮 ¡Ups! No has hecho ninguna apuesta...',
       '¡Elige un caballo y pon a prueba tu suerte antes de empezar la carrera!'
     );
-    return;
-  }
-
-  if (totalApostado > saldo) {
-    alert('⚠️ Saldo insuficiente.');
     return;
   }
 
