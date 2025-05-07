@@ -267,26 +267,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input[type="number"] {
-  padding: 8px;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-input[type="number"]:focus {
-  border-color: #4e342e;
-  outline: none;
-  box-shadow: 0 0 8px rgba(78, 52, 46, 0.6);
-}
-
-input[type="number"]:hover {
-  border-color: #6d4c41;
-  box-shadow: 0 0 6px rgba(109, 76, 65, 0.4);
-}
-
 .caballo-mini {
   width: 70%;
   height: auto;
@@ -383,6 +363,66 @@ input[type="number"]:hover {
     width: 100%;
     height: auto;
   }
+}
+
+.win[type="number"] {
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: rgba(172, 54, 54, 0.7);
+  text-align: center;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.win[type="number"]:focus {
+  border-color: #ff0a02;
+  outline: none;
+  box-shadow: 0 0 8px #ff0a02;
+}
+
+.win[type="number"]:hover {
+  border-color: #ff0a02;
+  box-shadow: 0 0 6px #ff0a02;
+}
+
+.place[type="number"] {
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: rgba(78, 172, 54, 0.7);
+  text-align: center;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.place[type="number"]:focus {
+  border-color: #35ff02;
+  outline: none;
+  box-shadow: 0 0 8px rgba(78, 172, 54, 0.7);
+}
+
+.place[type="number"]:hover {
+  border-color: #35ff02;
+  box-shadow: 0 0 6px rgba(78, 172, 54, 0.7);
+}
+
+.apuestass[type="number"] {
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: rgba(0, 132, 255, 0.7);
+  text-align: center;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.apuestass[type="number"]:focus {
+  border-color: #1b02ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 60, 255, 0.7)
+}
+
+.apuestass[type="number"]:hover {
+  border-color: #1b02ff;
+  box-shadow: 0 0 6px rgba(0, 60, 255, 0.7);
 }
 
 /* Estilo base del modal */
@@ -558,4 +598,18 @@ input[type="number"]:hover {
   transform: translate(-50%, -50%);
   z-index: 10; /* Aseguramos que el contador esté por encima de otros elementos */
   display: none; /* Inicialmente no se muestra */
+}
+
+#tooltip {
+  position: absolute;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
 }
