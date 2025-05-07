@@ -19,8 +19,7 @@
 
   <div class="header">
     <div id="title">
-      <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/title_horse.jpg
-      " style="height: 20px; width: auto; border-radius: 8px;">
+      <img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/title_horse.jpg" style="height: 20px; width: auto; border-radius: 8px;">
       Carreras de Caballos
     </div>
     <div id="saldo">💰 Saldo: €1000</div>
@@ -87,43 +86,43 @@
     <table class="tableron" style="width: 100%; margin-top: 20px; border-collapse: collapse; border: 1px solid #ccc;">
       <thead>
         <tr>
-          <th>TRAP</th>
-          <th>WINS</th>
-          <th>PLACE</th>
-          <th>SHOW</th>
-          <th>TRAP</th>
-          <th>WINS</th>
-          <th>PLACE</th>
-          <th>SHOW</th>
+          <th class="traps">TRAP</th>
+          <th class="wins">WINS</th>
+          <th class="places">PLACE</th>
+          <th class="apuestass">APUESTA</th>
+          <th class="traps">TRAP</th>
+          <th class="wins">WINS</th>
+          <th class="places">PLACE</th>
+          <th class="apuestass">APUESTA</th>
         </tr>
       </thead>
       <tbody class="">
         <tr>
           <!-- Aquí colocamos una imagen del caballo en vez de un número -->
           <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-blue.png" alt="Caballo Azul" class="caballo-mini"></td>
-          <td><input type="number" class="apuesta" id="win1" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="place1" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="show1" min="0" value="0"></td>
+          <td><input type="number" class="apuesta win" id="win1" min="0" value="0"></td>
+          <td><input type="number" class="apuesta place" id="place1" min="0" value="0"></td>
+          <td><input type="number" class="apuesta apuestass" id="show1" min="0" value="0"></td>
           <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-red.png" alt="Caballo Rojo" class="caballo-mini"></td>
-          <td><input type="number" class="apuesta" id="win4" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="place4" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="show4" min="0" value="0"></td>
+          <td><input type="number" class="apuesta win" id="win4" min="0" value="0"></td>
+          <td><input type="number" class="apuesta place" id="place4" min="0" value="0"></td>
+          <td><input type="number" class="apuesta apuestass" id="show4" min="0" value="0"></td>
         </tr>
         <tr>
           <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-orange.png" alt="Caballo Naranja" class="caballo-mini"></td>
-          <td><input type="number" class="apuesta" id="win2" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="place2" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="show2" min="0" value="0"></td>
+          <td><input type="number" class="apuesta win" id="win2" min="0" value="0"></td>
+          <td><input type="number" class="apuesta place" id="place2" min="0" value="0"></td>
+          <td><input type="number" class="apuesta apuestass" id="show2" min="0" value="0"></td>
           <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-green.png" alt="Caballo Verde" class="caballo-mini"></td>
-          <td><input type="number" class="apuesta" id="win5" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="place5" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="show5" min="0" value="0"></td>
+          <td><input type="number" class="apuesta win" id="win5" min="0" value="0"></td>
+          <td><input type="number" class="apuesta place" id="place5" min="0" value="0"></td>
+          <td><input type="number" class="apuesta apuestass" id="show5" min="0" value="0"></td>
         </tr>
         <tr>
           <td><img src="https://raw.githubusercontent.com/EndikaNF/horseRace/792451ddc943440dd8a06bdb40b9f28db3dc9031/img/horse-purple.png" alt="Caballo Morado" class="caballo-mini"></td>
-          <td><input type="number" class="apuesta" id="win3" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="place3" min="0" value="0"></td>
-          <td><input type="number" class="apuesta" id="show3" min="0" value="0"></td>
+          <td><input type="number" class="apuesta win" id="win3" min="0" value="0"></td>
+          <td><input type="number" class="apuesta place" id="place3" min="0" value="0"></td>
+          <td><input type="number" class="apuesta apuestass" id="show3" min="0" value="0"></td>
           <td colspan="4">
             <button onclick="mostrarContadorConDesenfoque()">Iniciar Carrera 🏁</button>
           </td>
@@ -131,6 +130,8 @@
       </tbody>
     </table>    
   </div>
+
+  <div id="tooltip" style="display: none;"></div>
 
   <!-- Modal de resultado -->
 <div id="modalResultado" class="modal">
@@ -160,7 +161,97 @@
   <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Obtener el tooltip
+    const tooltip = document.getElementById('tooltip');
+  
+    // Asignar los eventos a cada <th> con las clases que necesitas
+    const thElements = document.querySelectorAll('th');
+  
+    // Mapeo de las clases a los textos del tooltip
+    const tooltips = {
+      "traps": "Imagen del caballo por el que se apuesta. Selecciona una apuesta al frente del caballo.",
+      "wins": "Apuesta por el caballo ganador.",
+      "places": "Apuestas a que quede en 1º o 2º lugar.",
+      "apuestass": "Apuesta por que quede entre el 1º, 2º o 3º."
+    };
+  
+    thElements.forEach(th => {
+      th.addEventListener('mouseenter', (e) => {
+        const className = th.classList[0]; // Obtiene la primera clase de <th>
+        const text = tooltips[className];  // Obtiene el texto asociado a esa clase
+        if (text) {
+          tooltip.style.display = 'block';
+          tooltip.textContent = text;  // Mostrar el texto en el tooltip
+        }
+      });
+  
+      th.addEventListener('mousemove', (e) => {
+        // Mueve el tooltip a la posición del ratón
+        tooltip.style.left = (e.pageX + 10) + 'px';
+        tooltip.style.top = (e.pageY + 10) + 'px';
+      });
+  
+      th.addEventListener('mouseleave', () => {
+        // Ocultar el tooltip cuando el ratón salga
+        tooltip.style.display = 'none';
+      });
+    });
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+  input.addEventListener('input', () => {
+    // Si el valor está vacío, establece el valor en 0
+    if (input.value === '') {
+      input.value = '0';
+    }
+  });
+});
     
-    
+document.addEventListener('DOMContentLoaded', () => {
+  const saldoElemento = document.getElementById('saldo');
+  let saldo = 1000; // Valor inicial del saldo
+
+  // Obtener los inputs de apuesta
+  const apuestasInputs = document.querySelectorAll('.apuesta');
+
+  // Función para actualizar el saldo mostrado
+  const actualizarSaldo = () => {
+    saldoElemento.textContent = `💰 Saldo: €${saldo}`;
+  };
+
+  // Función para verificar si la suma de las apuestas es válida
+  const verificarApuestas = () => {
+    let sumaApuestas = 0;
+
+    apuestasInputs.forEach(input => {
+      sumaApuestas += parseFloat(input.value) || 0;
+    });
+
+    // Si la suma de las apuestas es mayor que el saldo, ajustar el último input
+    apuestasInputs.forEach(input => {
+      input.addEventListener('input', function () {
+        let sumaTemp = 0;
+        apuestasInputs.forEach(input => {
+          sumaTemp += parseFloat(input.value) || 0;
+        });
+
+        if (sumaTemp > saldo) {
+          let exceso = sumaTemp - saldo;
+          input.value = (parseFloat(input.value) || 0) - exceso; // Ajusta al máximo posible sin exceder
+        }
+      });
+    });
+  };
+
+  // Agregar event listener a los inputs
+  apuestasInputs.forEach(input => {
+    input.addEventListener('input', verificarApuestas);
+  });
+
+  actualizarSaldo();
+});
+
+
+  </script>
+  
 </body>
 </html>
